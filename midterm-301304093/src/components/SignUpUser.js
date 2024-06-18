@@ -19,26 +19,62 @@ const SignUpUser = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3">
           <Form.Label>First Name</Form.Label>
+          <Form.Control 
+            type="text" 
+            placeholder="Enter first name" 
+            {...register('firstName', { required: true })} 
+          />
+          {errors.firstName && <span>This field is required</span>}
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Last Name</Form.Label>
+          <Form.Control 
+            type="text" 
+            placeholder="Enter last name" 
+            {...register('lastName', { required: true })} 
+          />
+          {errors.lastName && <span>This field is required</span>}
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
+          <Form.Control 
+            type="text" 
+            placeholder="Enter username" 
+            {...register('userName', { required: true })} 
+          />
+          {errors.userName && <span>This field is required</span>}
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
+          <Form.Control 
+            type="email" 
+            placeholder="Enter email" 
+            {...register('email', { required: true, pattern: /^\S+@\S+$/i })} 
+          />
+          {errors.email && <span>This field is required and must be a valid email</span>}
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
+          <Form.Control 
+            type="password" 
+            placeholder="Enter password" 
+            {...register('password', { required: true })} 
+          />
+          {errors.password && <span>This field is required</span>}
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Confirm Password</Form.Label>
+          <Form.Control 
+            type="password" 
+            placeholder="Confirm password" 
+            {...register('confirmPassword', { required: true })} 
+          />
+          {errors.confirmPassword && <span>This field is required</span>}
         </Form.Group>
 
         <Button variant="primary" type="submit">
