@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 
 const AddProduct = () => { 
 
+    const [formData, setFormData] = useState({
+        name: '',
+        description: '',
+        category: '',
+        quantity: '',
+        price: ''
+      });
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -28,3 +36,5 @@ const AddProduct = () => {
         </form>
     )
 }
+
+export default AddProduct;
