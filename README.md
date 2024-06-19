@@ -8,7 +8,7 @@ To install and run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/comp-229-midterm.git
+   git clone https://github.com/shivam044/midterm-301304093.git
 
 2. Navigate to the project directory:
     ```bash
