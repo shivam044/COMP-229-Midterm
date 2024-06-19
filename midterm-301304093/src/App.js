@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, Navbar, Nav } from 'react-bootstrap';
 import AddProduct from './components/AddProduct';
 import SignUpUser from './components/SignUpUser';
 
@@ -19,17 +19,23 @@ const App = () => {
   };
 
   return (
-    <Container className="mt-5">
-      <div className="d-flex justify-content-around mb-4">
-        <Button variant="primary" onClick={() => setActiveForm('AddProduct')}>
-          Add Product
-        </Button>
-        <Button variant="secondary" onClick={() => setActiveForm('SignUpUser')}>
-          Sign Up User
-        </Button>
-      </div>
-      {renderForm()}
-    </Container>
+    <div>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="#">COMP 229 Midterm</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link onClick={() => setActiveForm('AddProduct')}>Add Product</Nav.Link>
+              <Nav.Link onClick={() => setActiveForm('SignUpUser')}>Sign Up User</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Container className="mt-5">
+        {renderForm()}
+      </Container>
+    </div>
   );
 };
 
