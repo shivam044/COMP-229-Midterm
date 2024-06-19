@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/App.css */
+.nav-tabs {
+  justify-content: center;
+}
+
+.nav-tabs .nav-link {
+  color: #fff;
+  background-color: #343a40;
+  border: 1px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #343a40;
+  background-color: #fff;
+  border-color: #343a40;
+}
+
+.container-tab {
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-card {
+  max-height: 90vh; /* Set max height to 90% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+  max-width: 600px;
+}
+

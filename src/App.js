@@ -1,39 +1,39 @@
 // src/App.js
 import React, { useState } from 'react';
-import { Button, Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Tab, Tabs, Navbar } from 'react-bootstrap';
 import AddProduct from './components/AddProduct';
 import SignUpUser from './components/SignUpUser';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 const App = () => {
-  const [activeForm, setActiveForm] = useState('AddProduct');
-
-  const renderForm = () => {
-    switch (activeForm) {
-      case 'AddProduct':
-        return <AddProduct />;
-      case 'SignUpUser':
-        return <SignUpUser />;
-      default:
-        return <AddProduct />;
-    }
-  };
+  const [key, setKey] = useState('AddProduct');
 
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#">COMP 229 Midterm</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link onClick={() => setActiveForm('AddProduct')}>Add Product</Nav.Link>
-              <Nav.Link onClick={() => setActiveForm('SignUpUser')}>Sign Up User</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container className="mt-5">
-        {renderForm()}
+      <Container className="mt-3">
+        <Tabs
+          id="controlled-tab-example"
+          activeKey={key}
+          onSelect={(k) => setKey(k)}
+          className="mb-3 nav-tabs"
+        >
+          <Tab eventKey="AddProduct" title="Add Product">
+            <div className="container-tab">
+              <AddProduct />
+            </div>
+          </Tab>
+          <Tab eventKey="SignUpUser" title="Sign Up User">
+            <div className="container-tab">
+              <SignUpUser />
+            </div>
+          </Tab>
+        </Tabs>
       </Container>
     </div>
   );
