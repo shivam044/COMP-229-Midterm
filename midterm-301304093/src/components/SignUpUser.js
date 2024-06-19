@@ -15,7 +15,7 @@ const SignUpUser = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5" fluid>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3">
           <Form.Label>First Name</Form.Label>
